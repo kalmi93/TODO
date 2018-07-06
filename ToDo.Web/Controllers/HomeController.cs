@@ -78,9 +78,6 @@ namespace ToDo.Web.Controllers
         [HttpPut("/api/tasks")]
         public async Task<IActionResult> UpdateTask([FromBody]TaskModel task)
         {
-
-
-            int asd = 5;
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
