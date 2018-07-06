@@ -1,0 +1,26 @@
+﻿<h2>ToDo list</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Owner</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of taskList">
+            <td>{{t.id}}</td>
+            <td>{{t.name}}</td>
+            <td>{{t.description}}</td>
+            <td>{{t.dueDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{t.user.name}}</td>
+            <td>{{getStatus(t.taskStatus)}}</td>
+            <td><a class="btn btn-default" [routerLink]="['/viewtask/', t.id]">View</a></td>
+        </tr>
+    </tbody>
+</table>
